@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #E5E5E5;
+    background-image: url("bg.jpg");
+}
+
+#book, .paper {
+    height: 580px;
+}
+
+#book {
+    width: 960px;
+    margin: auto;
+    transform-style: preserve-3d;
+    perspective: 5000px;
+    transition: transform 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.paper {
+    width: 50%;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 50%;
+
+    background-color: #FFEFEF;
+    transform-origin: left;
+    transition: transform 0.5s linear;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 5000px;
+}
+
+.paper .front {
+    
+}
+
+.paper .back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    width: 80%;
+    margin: auto;
+    backface-visibility: hidden;
+    transform: translateZ(-1px) rotateY(180deg);
+    background-color: #ffefef;
+}
