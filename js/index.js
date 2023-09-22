@@ -2,9 +2,10 @@
     window.onload = () => {
 
         var currentPaperIndex = 0;
-        running = false;
+        openingOrClosing = false;
         var upping = [];
         var downing = [];
+        var inRead = false;
         var valueBoxShadow = "2px 2px 30px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.5)";
 
         var bookHtml = $("#book");
@@ -32,85 +33,137 @@
             bookHtml.appendChild(paperHtml);
         }
 
+        var contents = $$(".page-content").forEach(contentHtml => {
+            contentHtml.contentEditable = true;
+        });
+
         function next() {
-            if (downing.every(x => x === false) && currentPaperIndex < paperCount) {
-                upping[currentPaperIndex] = true;
-                if (currentPaperIndex == 0)
-                    bookHtml.setAttribute('class', "in-read");
-
-                let currentPaperHtml = $(`#paper${currentPaperIndex}`);
-                currentPaperIndex++;
-                currentPaperHtml.setAttribute('class', 'paper open-half');
-                currentPaperHtml.style.zIndex = currentPaperHtml.getAttribute("index");
-                currentPaperHtml.style.boxShadow = valueBoxShadow;
-
+            if (!inRead) {
+                opening = true;
+                inRead = true;
+                bookHtml.setAttribute('class', "in-read");
+                let coverHtml = $('.cover');
+                coverHtml.setAttribute('class', 'cover open-half');
                 setTimeout(function () {
-                    currentPaperHtml.setAttribute('class', 'paper open-fully');
+                    coverHtml.setAttribute('class', 'cover open-fully');
                 }, 500);
-
                 setTimeout(function () {
-                    let previousPaperHtml = $(`#paper${currentPaperHtml.getAttribute("index") - 1}`);
-                    if (previousPaperHtml)
-                        previousPaperHtml.style.boxShadow = "none";
-                }, 1000);
-                setTimeout(() => {
-                    upping[currentPaperHtml.getAttribute("index")] = false;
-                }, 1500);
+                    coverHtml.style.zIndex = -1000;
+                    opening = false;
+                }, 500);
+            } else {
+                if (!opening && downing.every(x => x === false) && currentPaperIndex < paperCount) {
+                    upping[currentPaperIndex] = true;
+
+                    let currentPaperHtml = $(`#paper${currentPaperIndex}`);
+                    currentPaperIndex++;
+                    currentPaperHtml.setAttribute('class', 'paper open-half');
+                    currentPaperHtml.style.zIndex = currentPaperHtml.getAttribute("index");
+                    currentPaperHtml.style.boxShadow = valueBoxShadow;
+
+                    setTimeout(function () {
+                        currentPaperHtml.setAttribute('class', 'paper open-fully');
+                    }, 500);
+
+                    setTimeout(function () {
+                        let previousPaperHtml = $(`#paper${currentPaperHtml.getAttribute("index") - 1}`);
+                        if (previousPaperHtml)
+                            previousPaperHtml.style.boxShadow = "none";
+                    }, 1000);
+                    setTimeout(() => {
+                        upping[currentPaperHtml.getAttribute("index")] = false;
+                    }, 1200);
+                }
             }
         }
 
         function previous() {
-            if (upping.every(x => x === false) && currentPaperIndex > 0) {
-                if (currentPaperIndex == 1)
+            if (currentPaperIndex == 0) {
+                if (inRead && downing.every(x => x === false)) {
+                    inRead = false;
                     bookHtml.setAttribute('class', "");
+                    let coverHtml = $('.cover');
+                    coverHtml.style.zIndex = 1000;
+                    coverHtml.setAttribute('class', 'cover close-half');
+                    setTimeout(function () {
+                        coverHtml.setAttribute('class', 'cover close-fully');
+                    }, 500);
+                }
+            } else {
+                if (upping.every(x => x === false) && currentPaperIndex > 0) {
 
-                currentPaperIndex--;
-                downing[currentPaperIndex] = true;
-                let currentPaperHtml = $(`#paper${currentPaperIndex}`);
-                currentPaperHtml.style.zIndex = paperCount + 1;
-                currentPaperHtml.setAttribute('class', 'paper close-half');
+                    currentPaperIndex--;
+                    downing[currentPaperIndex] = true;
+                    let currentPaperHtml = $(`#paper${currentPaperIndex}`);
+                    currentPaperHtml.style.zIndex = paperCount + 1;
+                    currentPaperHtml.setAttribute('class', 'paper close-half');
 
-                let previousPaperHtml = $(`#paper${currentPaperHtml.getAttribute("index") - 1}`);
-                if (previousPaperHtml)
-                    previousPaperHtml.style.boxShadow = valueBoxShadow;
+                    let previousPaperHtml = $(`#paper${currentPaperHtml.getAttribute("index") - 1}`);
+                    if (previousPaperHtml)
+                        previousPaperHtml.style.boxShadow = valueBoxShadow;
 
-                setTimeout(function () {
-                    currentPaperHtml.setAttribute('class', 'paper close-fully');
-                }, 500);
-
-                setTimeout(function () {
-                    currentPaperHtml.style.zIndex = -currentPaperHtml.getAttribute("index");
-                    currentPaperHtml.style.boxShadow = "none";
-                }, 1000);
-                setTimeout(() => {
-                    downing[currentPaperHtml.getAttribute("index")] = false;
-                }, 1500);
+                    setTimeout(function () {
+                        currentPaperHtml.setAttribute('class', 'paper close-fully');
+                    }, 500);
+                    setTimeout(function () {
+                        currentPaperHtml.style.zIndex = -currentPaperHtml.getAttribute("index");
+                        currentPaperHtml.style.boxShadow = "none";
+                    }, 1000);
+                    setTimeout(() => {
+                        downing[currentPaperHtml.getAttribute("index")] = false;
+                    }, 1200);
+                }
             }
         }
 
         function gotox(pageIndex) {
             let paperIndex = Math.floor(pageIndex / 2);
             let times = Math.abs(paperIndex - currentPaperIndex);
-            if (paperIndex < currentPaperIndex) {
-                callFnNTimes(times, previous);
-            } else if (paperIndex > currentPaperIndex) {
-                callFnNTimes(times, next);
-            } else {
+            if (!inRead) {
+                next();
+                setTimeout(() => {
+                    if (paperIndex < currentPaperIndex) {
+                        callFnNTimes(times, previous);
+                    } else if (paperIndex > currentPaperIndex) {
+                        callFnNTimes(times, next);
+                    } else {
 
+                    }
+                }, 500);
+            } else {
+                if (paperIndex < currentPaperIndex) {
+                    callFnNTimes(times, previous);
+                } else if (paperIndex > currentPaperIndex) {
+                    callFnNTimes(times, next);
+                } else {
+
+                }
+            }
+        }
+
+        function closeAll() {
+            if (inRead) {
+                gotox(0);
+                let intervalId = null;
+                intervalId = setInterval(() => {
+                    if (downing.every(x => x === false)) {
+                        console.log("aaaaaaaaaaaaaaaaaaaaaaaaa");
+                        previous();
+                        clearInterval(intervalId);
+                    }
+                }, 100);
             }
         }
 
         function callFnNTimes(n, fn) {
             let count = 0;
-
             function call() {
                 if (count < n) {
                     fn();
                     count++;
-                    setTimeout(call, 300);
+                    setTimeout(call, 100);
                 }
             }
-
             call();
         }
 
@@ -127,7 +180,11 @@
             gotox(8);
         });
 
-        document.onkeydown = checkKey;
+        $('#sutdown').addEventListener('click', function () {
+            closeAll();
+        });
+
+        // document.onkeydown = checkKey;
 
         function checkKey(e) {
 
