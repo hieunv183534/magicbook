@@ -15,34 +15,38 @@ body {
 }
 
 #book {
-    width: 960px;
+    width: 480px;
     margin: auto;
-    transform-style: preserve-3d;
-    perspective: 5000px;
-    transition: transform 0.5s ease-in-out;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    perspective: 4000px;
+    position: relative;
+    transition: transform 0.5s linear;
+    margin-top: 100px;
+}
+
+.in-read {
+    transform: translateX(50%);
+    transition: transform 0.5s linear;
 }
 
 .paper {
-    width: 50%;
-    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
     position: absolute;
-    left: 50%;
-
+    left: 0;
+    top: 0;
     background-color: #FFEFEF;
     transform-origin: left;
     transition: transform 0.5s linear;
-    position: relative;
     transform-style: preserve-3d;
-    perspective: 5000px;
+    perspective: 4000px;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.5);
 }
 
 .paper .front {
-    
+    transition: background 0.5s linear;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
 }
 
 .paper .back {
@@ -51,10 +55,65 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 70%;
-    width: 80%;
     margin: auto;
     backface-visibility: hidden;
     transform: translateZ(-1px) rotateY(180deg);
     background-color: #ffefef;
+}
+
+.close-fully {
+    transform: rotateY(0deg);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.close-half {
+    transform: rotateY(-90deg);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.open-fully {
+    transform: rotateY(-180deg);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.open-half {
+    transform: rotateY(-90deg);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.page-content {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    margin-top: 5px;
+    margin-left: 5px;
+    position: relative;
+}
+
+.page-index {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+}
+
+* {
+    font-family: 'Indie Flower', cursive;
+    font-weight: 800;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
