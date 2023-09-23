@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-@import url('https://fonts.googleapis.com/css?family=Send+Flowers');
+@import url('https://fonts.googleapis.com/css?family=Mali');
 
 * {
     box-sizing: border-box;
@@ -96,11 +96,19 @@ body {
     margin-top: 5px;
     margin-left: 5px;
     position: relative;
+    padding: 10px;
+}
+
+.page-value {
+    width: 100%;
+    height: calc(100% - 7px);
+    outline: none;
 }
 
 .page-content img {
-    width: 50%;
+    width: 80%;
     height: auto;
+    margin: 0px auto;
 }
 
 .page-index {
@@ -155,10 +163,49 @@ body {
     z-index: -1000;
 }
 
+.editor-space {
+    z-index: 2000;
+    width: 1200px;
+    height: 90vh;
+    background-color: #BECFD6;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(80%, -50%) rotate(90deg);
+    transition: 1s;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 1);
+    border-radius: 6px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 20px;
+    padding-bottom: 40px;
+}
+
+.editor-space-close {
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: 1s;
+}
+
+.editor-space .paper {
+    width: 480px;
+    height: 580px;
+    position: relative;
+}
+
+#editor {
+    width: 480px;
+    height: 580px;
+    background-color: #ffefef;
+}
+
+#editor img {
+    width: 80%;
+    height: auto;
+}
 
 * {
-    font-family: 'Send Flowers', cursive;
-    font-weight: 800;
+    font-family: 'Mali', cursive;
 }
 
 @keyframes fade-in {

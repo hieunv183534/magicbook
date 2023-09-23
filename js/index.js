@@ -17,15 +17,17 @@
             let paperHtml = parseHTML(`<div class="paper close-fully" index="${i}"  id="paper${i}" style="z-index:${-i};">
                                                 <div class="front">
                                                     <div class="page-content">
-                                                        ${pages[i * 2]} <br>
-                                                        ${i}
+                                                        <div id="page${i * 2 + 1}" class="page-value">
+                                                            ${pages[i * 2]} <br>
+                                                        </div>
                                                         <div class="page-index">${i * 2 + 1}</div>
                                                     </div>
                                                 </div>
                                                 <div class="back">
                                                     <div class="page-content">
-                                                        ${pages[i * 2 + 1]} <br>
-                                                        ${i}
+                                                        <div  id="page${i * 2 + 2}" class="page-value">
+                                                            ${pages[i * 2 + 1]} <br>
+                                                        </div>
                                                         <div class="page-index">${i * 2 + 2}</div>
                                                     </div>
                                                 </div>
@@ -33,7 +35,7 @@
             bookHtml.appendChild(paperHtml);
         }
 
-        var contents = $$(".page-content").forEach(contentHtml => {
+        var contents = $$(".page-value").forEach(contentHtml => {
             contentHtml.contentEditable = true;
         });
 
@@ -184,6 +186,19 @@
             closeAll();
         });
 
+        $('#copy').addEventListener('click', function () {
+            $("#page3").innerHTML = $("#page2").innerHTML;
+            console.log($("#page3").innerHTML);
+        });
+
+        $('#editorbtn').addEventListener('click', function () {
+            if ($(".editor-space").classList.contains('editor-space-close')) {
+                $(".editor-space").classList.remove("editor-space-close");
+            } else {
+                $(".editor-space").classList.add("editor-space-close");
+            }
+        });
+
         // document.onkeydown = checkKey;
 
         function checkKey(e) {
@@ -197,6 +212,31 @@
                 next();
             }
 
+        }
+
+        configureEditor();
+
+        function configureEditor() {
+            var toolbarOptions = [
+                ['bold', 'italic', 'underline', 'strike'],
+                [{ 'header': 1 }, { 'header': 2 }],
+                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                [{ 'color': [] }, { 'background': [] }],
+                ['link'],
+                ['image'],
+                ['video'],
+                ['clean']
+            ];
+            var quill = new Quill('#editor', {
+                theme: 'snow', // Chọn chủ đề giao diện
+                modules: {
+                    toolbar: toolbarOptions,
+                }
+            });
+
+            quill.on('text-change', function (delta, oldDelta, source) {
+                document.querySelector("#target").innerHTML = quill.root.innerHTML;
+            });
         }
     }
 }());
