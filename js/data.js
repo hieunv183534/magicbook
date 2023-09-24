@@ -8,3 +8,22 @@ function getPages(bookName = "hieunv") {
         contentType: 'application/json'
     })
 }
+
+function updateBook(bookName = "hieunv") {
+    let book = {
+        bookName: bookName,
+        pages: pages.map((x, i) => {
+            return {
+                content: x,
+                index: i
+            }
+        })
+    };
+    return $.ajax({
+        url: `https://fsiconnected.tech/api/fsi/magic-book/or-update`,
+        method: 'POST',
+        data: JSON.stringify(book),
+        dataType: 'json',
+        contentType: 'application/json'
+    })
+}

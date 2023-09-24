@@ -39,8 +39,6 @@
     <i class="fa-solid fa-caret-left"></i>
   </button>
 
-  <button id="editorbtn">editor</button>
-
   <div id="book">
     <div class="cover close-fully" style="z-index: 1000;">
       <div class="front">
@@ -50,9 +48,21 @@
       </div>
     </div>
     <div class="back-cover">
-      <button id="newPage">
-        Viết tiếp câu chuyện...
-      </button>
+      <div class="back-cover-wrapper">
+        <span>
+          <button id="newPage">
+            Viết tiếp câu chuyện...
+          </button>
+        </span>
+        <p>Hoặc chỉnh sửa trang nào đó</p>
+        <p style="font-size: 11px;">(Muốn xóa trang thì xóa hết nội dung trang đó)</p>
+        <span>
+          <input type="number" id="inputEditIndex" placeholder="Nhập trang">
+          <button id="editPage">
+            Chỉnh
+          </button>
+        </span>
+      </div>
     </div>
   </div>
 

@@ -16,6 +16,11 @@
 
         function renderBook() {
             getPages().done(res => {
+                $$1("#book .paper").forEach(paper => {
+                    paper.remove();
+                });
+                currentPaperIndex = 0;
+
                 pages = res.pages.sort((a, b) => a.index - b.index).map(x => x.content);
                 pageCount = pages.length;
                 paperCount = Math.ceil(pageCount / 2);
@@ -25,17 +30,13 @@
                     let paperHtml = parseHTML(`<div class="paper close-fully" index="${i}"  id="paper${i}" style="z-index:${-i};">
                                                     <div class="front">
                                                         <div class="page-content">
-                                                            <div id="page${i * 2 + 1}" class="page-value">
-                                                                ${pages[i * 2]} <br>
-                                                            </div>
+                                                            <div id="page${i * 2 + 1}" class="page-value">${pages[i * 2]}</div>
                                                             <div class="page-index">${i * 2 + 1}</div>
                                                         </div>
                                                     </div>
                                                     <div class="back">
                                                         <div class="page-content">
-                                                            <div  id="page${i * 2 + 2}" class="page-value">
-                                                                ${pages[i * 2 + 1]} <br>
-                                                            </div>
+                                                            <div  id="page${i * 2 + 2}" class="page-value">${pages[i * 2 + 1]}</div>
                                                             <div class="page-index">${i * 2 + 2}</div>
                                                         </div>
                                                     </div>
@@ -184,32 +185,52 @@
         });
 
         $1('#newPage').addEventListener('click', function () {
-            $1(".editor-space").classList.add("editor-space-close");
+            choosePageIndex = pageCount;
+            document.querySelector("#target").innerHTML = "";
+            quill.setText('');
+            $1(".editor-space").classList.add("editor-space-open");
+        });
+
+        $1('#editPage').addEventListener('click', function () {
+            choosePageIndex = Number($1("#inputEditIndex").value - 1);
+            let content = pages[choosePageIndex];
+            quill.root.innerHTML = `${content}`;
+
+            document.querySelector("#target").innerHTML = quill.root.innerHTML;
+            $1(".editor-space").classList.add("editor-space-open");
         });
 
         $1('#save').addEventListener('click', function () {
-            $1(".editor-space").classList.remove("editor-space-close");
+            debugger;
+            let contentHtml = document.querySelector("#target").innerHTML;
+            pages[choosePageIndex] = contentHtml;
+
+            updateBook().done(res => {
+                renderBook();
+                $1(".editor-space").classList.remove("editor-space-open");
+            });
+
         });
 
         $1('#cancel').addEventListener('click', function () {
-            $1(".editor-space").classList.remove("editor-space-close");
+            document.querySelector("#target").innerHTML = "";
+            quill.setText('');
+            $1(".editor-space").classList.remove("editor-space-open");
         });
 
-        // document.onkeydown = checkKey;
+        // document.onkeydown = (e) => {
+        //     e = e || window.event;
 
-        function checkKey(e) {
+        //     if (e.keyCode == '37') {
+        //         previous();
+        //     }
+        //     else if (e.keyCode == '39') {
+        //         next();
+        //     }
 
-            e = e || window.event;
+        // };
 
-            if (e.keyCode == '37') {
-                previous();
-            }
-            else if (e.keyCode == '39') {
-                next();
-            }
-
-        }
-
+        var quill = null;
         configureEditor();
 
         function configureEditor() {
@@ -222,7 +243,7 @@
                 ['emoji'],
                 ['clean']
             ];
-            var quill = new Quill('#editor', {
+            quill = new Quill('#editor', {
                 theme: 'snow',
                 modules: {
                     toolbar: toolbarOptions,
