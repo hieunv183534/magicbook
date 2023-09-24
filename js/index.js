@@ -8,43 +8,49 @@
         var inRead = false;
         var valueBoxShadow = "2px 2px 30px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.5)";
 
-        var bookHtml = $("#book");
-        let pageCount = pages.length;
-        let paperCount = Math.ceil(pageCount / 2);
-        upping = Array(paperCount).fill(false);
-        downing = Array(paperCount).fill(false);
-        for (let i = paperCount - 1; i >= 0; i--) {
-            let paperHtml = parseHTML(`<div class="paper close-fully" index="${i}"  id="paper${i}" style="z-index:${-i};">
-                                                <div class="front">
-                                                    <div class="page-content">
-                                                        <div id="page${i * 2 + 1}" class="page-value">
-                                                            ${pages[i * 2]} <br>
-                                                        </div>
-                                                        <div class="page-index">${i * 2 + 1}</div>
-                                                    </div>
-                                                </div>
-                                                <div class="back">
-                                                    <div class="page-content">
-                                                        <div  id="page${i * 2 + 2}" class="page-value">
-                                                            ${pages[i * 2 + 1]} <br>
-                                                        </div>
-                                                        <div class="page-index">${i * 2 + 2}</div>
-                                                    </div>
-                                                </div>
-                                            </div>`);
-            bookHtml.appendChild(paperHtml);
-        }
+        var bookHtml = $1("#book");
+        var paperCount = null;
+        var pageCount = null;
+        var choosePageIndex = null;
+        renderBook();
 
-        var contents = $$(".page-value").forEach(contentHtml => {
-            contentHtml.contentEditable = true;
-        });
+        function renderBook() {
+            getPages().done(res => {
+                pages = res.pages.sort((a, b) => a.index - b.index).map(x => x.content);
+                pageCount = pages.length;
+                paperCount = Math.ceil(pageCount / 2);
+                upping = Array(paperCount).fill(false);
+                downing = Array(paperCount).fill(false);
+                for (let i = paperCount - 1; i >= 0; i--) {
+                    let paperHtml = parseHTML(`<div class="paper close-fully" index="${i}"  id="paper${i}" style="z-index:${-i};">
+                                                    <div class="front">
+                                                        <div class="page-content">
+                                                            <div id="page${i * 2 + 1}" class="page-value">
+                                                                ${pages[i * 2]} <br>
+                                                            </div>
+                                                            <div class="page-index">${i * 2 + 1}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="back">
+                                                        <div class="page-content">
+                                                            <div  id="page${i * 2 + 2}" class="page-value">
+                                                                ${pages[i * 2 + 1]} <br>
+                                                            </div>
+                                                            <div class="page-index">${i * 2 + 2}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>`);
+                    bookHtml.appendChild(paperHtml);
+                }
+            });
+        }
 
         function next() {
             if (!inRead) {
                 opening = true;
                 inRead = true;
                 bookHtml.setAttribute('class', "in-read");
-                let coverHtml = $('.cover');
+                let coverHtml = $1('.cover');
                 coverHtml.setAttribute('class', 'cover open-half');
                 setTimeout(function () {
                     coverHtml.setAttribute('class', 'cover open-fully');
@@ -57,7 +63,7 @@
                 if (!opening && downing.every(x => x === false) && currentPaperIndex < paperCount) {
                     upping[currentPaperIndex] = true;
 
-                    let currentPaperHtml = $(`#paper${currentPaperIndex}`);
+                    let currentPaperHtml = $1(`#paper${currentPaperIndex}`);
                     currentPaperIndex++;
                     currentPaperHtml.setAttribute('class', 'paper open-half');
                     currentPaperHtml.style.zIndex = currentPaperHtml.getAttribute("index");
@@ -68,7 +74,7 @@
                     }, 500);
 
                     setTimeout(function () {
-                        let previousPaperHtml = $(`#paper${currentPaperHtml.getAttribute("index") - 1}`);
+                        let previousPaperHtml = $1(`#paper${currentPaperHtml.getAttribute("index") - 1}`);
                         if (previousPaperHtml)
                             previousPaperHtml.style.boxShadow = "none";
                     }, 1000);
@@ -84,7 +90,7 @@
                 if (inRead && downing.every(x => x === false)) {
                     inRead = false;
                     bookHtml.setAttribute('class', "");
-                    let coverHtml = $('.cover');
+                    let coverHtml = $1('.cover');
                     coverHtml.style.zIndex = 1000;
                     coverHtml.setAttribute('class', 'cover close-half');
                     setTimeout(function () {
@@ -96,11 +102,11 @@
 
                     currentPaperIndex--;
                     downing[currentPaperIndex] = true;
-                    let currentPaperHtml = $(`#paper${currentPaperIndex}`);
+                    let currentPaperHtml = $1(`#paper${currentPaperIndex}`);
                     currentPaperHtml.style.zIndex = paperCount + 1;
                     currentPaperHtml.setAttribute('class', 'paper close-half');
 
-                    let previousPaperHtml = $(`#paper${currentPaperHtml.getAttribute("index") - 1}`);
+                    let previousPaperHtml = $1(`#paper${currentPaperHtml.getAttribute("index") - 1}`);
                     if (previousPaperHtml)
                         previousPaperHtml.style.boxShadow = valueBoxShadow;
 
@@ -149,7 +155,6 @@
                 let intervalId = null;
                 intervalId = setInterval(() => {
                     if (downing.every(x => x === false)) {
-                        console.log("aaaaaaaaaaaaaaaaaaaaaaaaa");
                         previous();
                         clearInterval(intervalId);
                     }
@@ -170,33 +175,24 @@
         }
 
 
-        $('#open').addEventListener('click', function () {
+        $1('#open').addEventListener('click', function () {
             next();
         });
 
-        $('#close').addEventListener('click', function () {
+        $1('#close').addEventListener('click', function () {
             previous();
         });
 
-        $('#gotox').addEventListener('click', function () {
-            gotox(8);
+        $1('#newPage').addEventListener('click', function () {
+            $1(".editor-space").classList.add("editor-space-close");
         });
 
-        $('#sutdown').addEventListener('click', function () {
-            closeAll();
+        $1('#save').addEventListener('click', function () {
+            $1(".editor-space").classList.remove("editor-space-close");
         });
 
-        $('#copy').addEventListener('click', function () {
-            $("#page3").innerHTML = $("#page2").innerHTML;
-            console.log($("#page3").innerHTML);
-        });
-
-        $('#editorbtn').addEventListener('click', function () {
-            if ($(".editor-space").classList.contains('editor-space-close')) {
-                $(".editor-space").classList.remove("editor-space-close");
-            } else {
-                $(".editor-space").classList.add("editor-space-close");
-            }
+        $1('#cancel').addEventListener('click', function () {
+            $1(".editor-space").classList.remove("editor-space-close");
         });
 
         // document.onkeydown = checkKey;
@@ -222,15 +218,16 @@
                 [{ 'header': 1 }, { 'header': 2 }],
                 [{ 'list': 'ordered' }, { 'list': 'bullet' }],
                 [{ 'color': [] }, { 'background': [] }],
-                ['link'],
-                ['image'],
-                ['video'],
+                ['link', 'image', 'video'],
+                ['emoji'],
                 ['clean']
             ];
             var quill = new Quill('#editor', {
-                theme: 'snow', // Chọn chủ đề giao diện
+                theme: 'snow',
                 modules: {
                     toolbar: toolbarOptions,
+                    imageResize: {},
+                    "emoji-toolbar": true
                 }
             });
 

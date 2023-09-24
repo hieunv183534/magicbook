@@ -105,8 +105,28 @@ body {
     outline: none;
 }
 
+.page-value p {
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0px;
+}
+
+.page-value h1 {
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.page-value h2 {
+    font-size: 19.5px;
+    line-height: 27px;
+    font-weight: 700;
+    margin: 0px;
+}
+
 .page-content img {
-    width: 80%;
+    max-width: 90%;
     height: auto;
     margin: 0px auto;
 }
@@ -163,6 +183,21 @@ body {
     z-index: -1000;
 }
 
+#newPage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -999;
+    transform: translate(-50%, -50%);
+    outline: none;
+    border: 1px solid #404373;
+    width: auto;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
 .editor-space {
     z-index: 2000;
     width: 1200px;
@@ -200,12 +235,69 @@ body {
 }
 
 #editor img {
-    width: 80%;
+    max-width: 90%;
     height: auto;
+}
+
+.button-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.button-list button {
+    width: 80px;
+    height: 32px;
+    outline: none;
+    border: 1px solid;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-list button:hover {
+    opacity: 0.8;
+}
+
+#open, #close {
+    width: 50px;
+    height: 120px;
+    position: fixed;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.15);
+    transform: translateY(-50%);
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+
+#close:hover i {
+    transform: scale(1.7);
+}
+
+#open:hover i {
+    transform: scale(1.7);
+}
+
+
+#open, #close i {
+    font-size: 20px;
+}
+
+#open {
+    right: 0px;
+}
+
+#close {
+    left: 0px;
 }
 
 * {
     font-family: 'Mali', cursive;
+}
+
+.ql-editor {
+    white-space: normal !important;
 }
 
 @keyframes fade-in {

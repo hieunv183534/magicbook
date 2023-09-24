@@ -1,2 +1,10 @@
-var pages = ["Trang 1 Praesentium eget maecenas autem proident! Ullam maiores facere repudiandae dignissim iaculis rhoncus. Nostrud quam! Dicta, aliquam voluptates maecenas expedita turpis? Et qui veniam. Auctor facere lacus eaque malesuada per hic! Id do iaculis nesciunt porttitor maecenas! Cursus nihil class eum, beatae, ipsa? Itaque elementum unde. Ex voluptatibus expedita, fermentum wisi, viverra eligendi voluptate tortor quidem architecto mi voluptate nulla tenetur odit platea curae vulputate rem, cupidatat arcu minim praesent quia eget mollis? Porta consequat dapibus eiusmod consectetuer montes? Dictumst velit. Minus mauris non ratione! Tincidunt sit suspendisse voluptate irure occaecat! Accusantium sunt quisque nunc ipsam aenean consequatur tincidunt pellentesque fuga.", "Trang 2", "Trang 3", "Trang 4", "Trang 5", "Trang 6", "Trang 7", "Trang 8", "Trang 9", "Trang 10", "Trang 11",
-    "Trang 12", "Trang 13", "Trang 14", "Trang 15", "Trang 16", "Trang 17", "Trang 18", "Trang 19", "Trang 20", "Trang 21"];
+var pages = [];
+
+function getPages(bookName = "hieunv") {
+    return $.ajax({
+        url: `https://fsiconnected.tech/api/fsi/magic-book/magic-book?name=${bookName}`,
+        method: 'GET',
+        dataType: 'json',
+        contentType: 'application/json'
+    })
+}

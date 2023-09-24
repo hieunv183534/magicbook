@@ -4,10 +4,10 @@ function parseHTML(html) {
     return t.content.firstChild;
 }
 
-function $(selector) {
+function $1(selector) {
     return document.querySelector(selector);
 }
 
-function $$(selector) {
+function $$1(selector) {
     return document.querySelectorAll(selector);
 }

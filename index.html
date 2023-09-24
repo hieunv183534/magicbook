@@ -7,16 +7,23 @@
 
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Just Note</title>
+  <title>Magic Book</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./dist/quill-emoji.css">
 
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.3/purify.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/quill-whitespace@latest/dist/whitespace.min.js"></script>
+  <script src="quill-image-resize-module-master/image-resize.min.js"></script>
+  <script src="./dist/quill-emoji.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -25,11 +32,13 @@
 </head>
 
 <body>
-  <button id="open">open</button>
-  <button id="close">close</button>
-  <button id="gotox">goto trang 8</button>
-  <button id="sutdown">sutdown</button>
-  <button id="copy">copy</button>
+  <button id="open">
+    <i class="fa-solid fa-caret-right"></i>
+  </button>
+  <button id="close">
+    <i class="fa-solid fa-caret-left"></i>
+  </button>
+
   <button id="editorbtn">editor</button>
 
   <div id="book">
@@ -40,7 +49,11 @@
       <div class="back">
       </div>
     </div>
-    <div class="back-cover"></div>
+    <div class="back-cover">
+      <button id="newPage">
+        Viết tiếp câu chuyện...
+      </button>
+    </div>
   </div>
 
 
@@ -49,11 +62,18 @@
       <div class="front">
         <div class="page-content">
           <div id="target" class="page-value">
-            Nguyễn Văn Hiếu
+            Chúng ta chiến đấu vì điều gì
+            <img width="60%"
+              src="https://tv-fanatic-res.cloudinary.com/iu/s--UqDhWj_H--/t_full/cs_srgb,f_auto,fl_strip_profile.lossy,q_auto:420/v1371135365/spartacus-picture.png"
+              alt="">
           </div>
           <div class="page-index">1</div>
         </div>
       </div>
+    </div>
+    <div class="button-list">
+      <button id="save">Save</button>
+      <button id="cancel" style="margin-top: 4px;">Cancel</button>
     </div>
     <div class="editor-wrapper">
       <div id="editor"></div>
