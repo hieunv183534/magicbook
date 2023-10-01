@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Tourney');
 
 body {
-    background-image: url(./bg.jpg);
+    background-image: url(./bg1.jpg);
     width: calc(100vw - 17px);
     height: 100vh;
     overflow-y: auto;
@@ -23,7 +23,7 @@ body {
     padding-bottom: 10px;
     height: auto;
     background-color: #fff;
-    box-shadow: 5px 5px 30px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.3);
     position: relative;
 }
 
