@@ -110,10 +110,10 @@ body {
     outline: none;
 }
 
-/* .page-value span {
-    width: 100%;
-    height: 100%;
-} */
+iframe {
+   display: block ;
+   margin: auto;
+}
 
 .page-value p {
     font-size: 13px;

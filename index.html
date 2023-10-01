@@ -2,97 +2,1059 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/library.css">
+    <link rel="stylesheet" href="./owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="./owlcarousel/assets/owl.theme.default.css">
 
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Magic Book</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./dist/quill-emoji.css">
-
-  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-  <script src="quill-image-resize-module-master/image-resize.min.js"></script>
-  <script src="./dist/quill-emoji.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./css/style.css">
-  <meta name="theme-color" content="#F26B38">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./owlcarousel/owl.carousel.min.js"></script>
 </head>
 
 <body>
-  <button id="open">
-    <i class="fa-solid fa-caret-right"></i>
-  </button>
-  <button id="close">
-    <i class="fa-solid fa-caret-left"></i>
-  </button>
 
-  <div id="book">
-    <div class="cover close-fully" style="z-index: 1000;">
-      <div class="front">
-        Đây là quyển sách
-      </div>
-      <div class="back">
-      </div>
-    </div>
-    <div class="back-cover">
-      <div class="back-cover-wrapper">
-        <span>
-          <button id="newPage">
-            Viết tiếp câu chuyện...
-          </button>
-        </span>
-        <p>Hoặc chỉnh sửa trang nào đó</p>
-        <p style="font-size: 11px;">(Muốn xóa trang thì xóa hết nội dung trang đó)</p>
-        <span>
-          <input type="number" id="inputEditIndex" placeholder="Nhập trang">
-          <button id="editPage">
-            Chỉnh
-          </button>
-        </span>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="editor-space">
-    <div class="paper close-fully">
-      <div class="front">
-        <div class="page-content">
-          <div id="target" class="page-value">
-            Chúng ta chiến đấu vì điều gì
-            <img width="60%"
-              src="https://tv-fanatic-res.cloudinary.com/iu/s--UqDhWj_H--/t_full/cs_srgb,f_auto,fl_strip_profile.lossy,q_auto:420/v1371135365/spartacus-picture.png"
-              alt="">
-          </div>
-          <div class="page-index">1</div>
+    <div class="body-content">
+        <br><br><br>
+        <div class="book-row">
+            <div class="row-foot">
+                <p>ABOUT ME  🤗</p>
+            </div>
+            <div class="owl-carousel">
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C1</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C2</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C3</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C4</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            Nguyễn Văn Hiếu
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+            </div>
         </div>
-      </div>
+        <div class="book-row">
+            <div class="row-foot">
+                <p>CODE 💻</p>
+            </div>
+            <div class="owl-carousel">
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C1</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C2</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C3</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C4</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            Nguyễn Văn Hiếu
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="book-row">
+            <div class="row-foot">
+                <p>LEARN ENGLISH 💰</p>
+            </div>
+            <div class="owl-carousel">
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C1</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C2</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C3</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C4</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            Nguyễn Văn Hiếu
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="book-row">
+            <div class="row-foot">
+                <p>🎵 MUSIC & FILM 🎞️</p>
+            </div>
+            <div class="owl-carousel">
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C1</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C2</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C3</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C4</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            Nguyễn Văn Hiếu
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="book-row">
+            <div class="row-foot">
+                <p>BOOK 📖</p>
+            </div>
+            <div class="owl-carousel">
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C1</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C2</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C3</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C4</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            Nguyễn Văn Hiếu
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="book-row">
+            <div class="row-foot">
+                <p>COLLECTED VALUES 🌈</p>
+            </div>
+            <div class="owl-carousel">
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C1</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C2</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C3</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            <a href="https://hiepsiit.com/detail/c/laptrinhc">
+                                C là ngôn ngữ lập trình bậc cao được phát triển ban đầu bởi Dennis M.Ritchie để phát
+                                triển
+                                hệ
+                                thống
+                                lập trình UNIX ở Bell Labs. ... Xem tiếp<span
+                                    class="far fa-hand-point-right ml-1"></span>
+                            </a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+                <figure style="margin-left: 200px;" class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="position-relative py-8 py-sm-7">
+                                <div class="bg-holder rounded-soft rounded-bottom-0"
+                                    style="background-image:url('https://daynhauhoc.com/user_avatar/daynhauhoc.com/meigyokuthmn/120/5573_2.png');">
+                                </div>
+                            </div>
+                            <div class="align">
+                                <h1 class="card-title" style="font-size:16px">Lập trình C4</h1>
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li style="font-size:14px">
+                            Nguyễn Văn Hiếu
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+        </div>
     </div>
-    <div class="button-list">
-      <button id="save">Save</button>
-      <button id="cancel" style="margin-top: 4px;">Cancel</button>
-    </div>
-    <div class="editor-wrapper">
-      <div id="editor"></div>
-    </div>
-  </div>
 
-  <script src="./js/common.js"></script>
-  <script src="./js/data.js"></script>
-  <script src="./js/index.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

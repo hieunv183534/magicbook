@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Tourney');
+
+body {
+    background-image: url(./bg.jpg);
+    width: calc(100vw - 17px);
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.body-content{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-row{
+    width: calc(100% - 50px);
+    margin-left: 25px;
+    border-radius: 8px;
+    margin-bottom: 70px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 5px 5px 30px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.row-foot{
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to left,#BECFD6, #FFEFEF);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-foot p{
+    font-family: 'Tourney', cursive;
+    font-size: 20px;
+}
+
+.owl-nav button {
+    position: absolute;
+    top: 50%;
+    background-color: #122863;
+    color: #fff;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.owl-nav button.owl-prev {
+    left: 0;
+}
+
+.owl-nav button.owl-next {
+    right: 0;
+}
+
+.owl-dots{
+    display: none !important;
+}
+
+.owl-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0) !important;
+}
+
+span {
+    font-size: 70px;
+    position: relative;
+    top: -5px;
+}
+
+.owl-nav button:focus {
+    outline: none;
+}
+
+
+/* .owl-stage{
+    height: 300px !important;
+    padding-top: 40px !important;
+} */
+
+.owl-item{
+    height: 300px !important;
+    margin-top: 40px;
+}

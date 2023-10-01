@@ -1,6 +1,4 @@
-var pages = [];
-
-function getPages(bookName = "hieunv") {
+function getBook(bookName = "hieunv") {
     return $.ajax({
         url: `https://fsiconnected.tech/api/fsi/magic-book/magic-book?name=${bookName}`,
         method: 'GET',
@@ -9,9 +7,9 @@ function getPages(bookName = "hieunv") {
     })
 }
 
-function updateBook(bookName = "hieunv") {
-    let book = {
-        bookName: bookName,
+function addOrUpdateBook(book, pages) {
+    let _book = {
+        ...book,
         pages: pages.map((x, i) => {
             return {
                 content: x,
@@ -23,6 +21,24 @@ function updateBook(bookName = "hieunv") {
         url: `https://fsiconnected.tech/api/fsi/magic-book/or-update`,
         method: 'POST',
         data: JSON.stringify(book),
+        dataType: 'json',
+        contentType: 'application/json'
+    })
+}
+
+function getBooks(filter) {
+    return $.ajax({
+        url: `https://fsiconnected.tech/api/fsi/magic-book/book?filter=${filter}`,
+        method: 'GET',
+        dataType: 'json',
+        contentType: 'application/json'
+    })
+}
+
+function deleteBook(bookName) {
+    return $.ajax({
+        url: `https://fsiconnected.tech/api/fsi/magic-book/book?bookName=${bookName}`,
+        method: 'DELETE',
         dataType: 'json',
         contentType: 'application/json'
     })
