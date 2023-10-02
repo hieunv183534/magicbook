@@ -7,14 +7,14 @@ body {
     overflow-y: auto;
 }
 
-.body-content{
+.body-content {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
 }
 
-.book-row{
+.book-row {
     width: calc(100% - 50px);
     margin-left: 25px;
     border-radius: 8px;
@@ -27,10 +27,10 @@ body {
     position: relative;
 }
 
-.row-foot{
+.row-foot {
     width: 100%;
     height: 50px;
-    background: linear-gradient(to left,#BECFD6, #FFEFEF);
+    background: linear-gradient(to left, #BECFD6, #FFEFEF);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -41,7 +41,7 @@ body {
     justify-content: center;
 }
 
-.row-foot p{
+.row-foot p {
     font-family: 'Tourney', cursive;
     font-size: 20px;
 }
@@ -63,7 +63,7 @@ body {
     right: 0;
 }
 
-.owl-dots{
+.owl-dots {
     display: none !important;
 }
 
@@ -90,7 +90,82 @@ span {
     padding-top: 40px !important;
 } */
 
-.owl-item{
+.owl-item {
     height: 300px !important;
     margin-top: 40px;
+}
+
+
+
+/* footer---------------------------- */
+
+.footer {
+    width: 100%;
+    height: 270px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.footer-bg {
+    position: absolute;
+    bottom: 0;
+    background: url(./footer_bg.png) no-repeat scroll center 0;
+    width: 100%;
+    height: 266px;
+}
+
+.footer-bg-one {
+    background: url(./volks.gif) no-repeat center center;
+    width: 290px;
+    height: 105px;
+    background-size: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    -webkit-animation: myfirst 15s linear infinite;
+    animation: myfirst 15s linear infinite;
+}
+
+.footer-bg-two {
+    background: url(./volks.gif) no-repeat center center;
+    width: 330px;
+    height: 105px;
+    background-size: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    -webkit-animation: myfirst 25s linear infinite;
+    animation: myfirst 25s linear infinite;
+}
+
+.footer-bg-three {
+    background: url(./cyclist.gif) no-repeat center center;
+    width: 88px;
+    height: 100px;
+    background-size: 100%;
+    bottom: 0;
+    left: 30%;
+    position: absolute;
+    -webkit-animation: mysecond 38s linear infinite;
+    animation: mysecond 38s linear infinite;
+}
+
+@keyframes myfirst {
+    0% {
+        left: -300px;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes mysecond {
+    0% {
+        left: -90px;
+    }
+
+    100% {
+        left: 100%;
+    }
 }
