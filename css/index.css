@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Tourney');
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+@import url('https://fonts.googleapis.com/css?family=Grape+Nuts');
 
 body {
     background-image: url(./bg1.jpg);
@@ -12,6 +15,43 @@ body {
     height: auto;
     display: flex;
     flex-direction: column;
+    padding-top: 140px;
+}
+
+.well-come {
+    width: calc(100% - 100px);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background-color: #F8F4EF;
+    margin-bottom: 60px;
+    padding: 0px 30px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0px;
+    left: 50px;
+    z-index: 100;
+}
+/* 
+.logo {
+    width: auto;
+    height: 65px;
+    background-color: aqua;
+    width: 275px;
+} */
+
+.logo h1 {
+    font-family: 'Bungee Shade', cursive;
+    font-size: 45px;
+    margin: 0;
+    line-height: 45px;
+}
+
+.logo p {
+    font-family: 'Grape Nuts', cursive;
+    font-size: 18px;
 }
 
 .book-row {
