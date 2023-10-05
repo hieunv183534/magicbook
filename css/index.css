@@ -50,6 +50,12 @@ body {
     justify-content: space-between;
 }
 
+@media screen and (max-width: 560px) {
+    .user {
+        display: none;
+    }
+}
+
 .user i {
     font-size: 24px;
 }
@@ -71,7 +77,7 @@ body {
     cursor: pointer;
 }
 
-.user button:hover{
+.user button:hover {
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.4);
 }
 
