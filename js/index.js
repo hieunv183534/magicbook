@@ -32,8 +32,14 @@
             }
         );
 
-        // $('.owl-carousel').on('changed.owl.carousel', function (event) {
-        //     $('.owl-item').css('height', '300px');
-        // });
+
+        $("#loginBtn").on('click', () => {
+            $(".user").attr('status', 'in');
+            $("#username").html('hieunv183534');
+        });
+        $("#logoutBtn").on('click', () => {
+            $(".user").attr('status', 'out');
+            $("#username").html('login_to_write');
+        });
     });
 }());

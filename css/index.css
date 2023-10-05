@@ -56,8 +56,25 @@ body {
     }
 }
 
+.user[status="in"] #loginBtn {
+    display: none;
+}
+
+.user[status="in"] #logoutBtn {
+    display: block;
+}
+
+.user[status="out"] #loginBtn {
+    display: block;
+}
+
+.user[status="out"] #logoutBtn {
+    display: none;
+}
+
 .user i {
     font-size: 24px;
+    margin-left: 3px;
 }
 
 .user p {
