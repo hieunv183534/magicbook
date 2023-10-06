@@ -34,8 +34,10 @@
 
 
         $("#loginBtn").on('click', () => {
+            debugger
             $(".user").attr('status', 'in');
             $("#username").html('hieunv183534');
+            window.location.href = "./login.html";
         });
         $("#logoutBtn").on('click', () => {
             $(".user").attr('status', 'out');

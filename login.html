@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/login.css">
+    <script src="./js/jquery.min.js"></script>
 </head>
+
 <body>
+    <div class="login-container">
+        <div class="login-title">
+            <div class="logo">
+                <h1>TheBooks.pro</h1>
+            </div>
+        </div>
+        <p>Đăng nhập</p>
+        <div class="form-item">
+            <p>Username hoặc Email</p>
+            <input type="text">
+        </div>
+        <div class="form-item">
+            <p>Password</p>
+            <input type="password">
+        </div>
+        <button id="loginBtn">Đăng nhập</button>
     
+        <span style="margin-top: 5px;">
+            <p><a>Đăng ký</a> nếu chưa có tài khoản</p>
+        </span>
+        <span style="margin-top: 5px; display: flex;">
+            <p>Hoặc đăng nhập bằng</p>
+            <button style="margin-left: 2px;">Facebook <i class="fa-brands fa-facebook"></i></button>
+        </span>
+    </div>
 </body>
+
 </html>
