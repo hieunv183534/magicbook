@@ -1,6 +1,6 @@
 function getBook(bookName = "hieunv") {
     return $.ajax({
-        url: `https://fsiconnected.tech/api/fsi/magic-book/magic-book?name=${bookName}`,
+        url: `https://thebooks.azurewebsites.net/api/app/magic-book/magic-book?name=${bookName}`,
         method: 'GET',
         dataType: 'json',
         contentType: 'application/json'
@@ -18,7 +18,7 @@ function addOrUpdateBook(book, pages) {
         })
     };
     return $.ajax({
-        url: `https://fsiconnected.tech/api/fsi/magic-book/or-update`,
+        url: `https://thebooks.azurewebsites.net/api/app/magic-book/or-update`,
         method: 'POST',
         data: JSON.stringify(book),
         dataType: 'json',
@@ -28,7 +28,7 @@ function addOrUpdateBook(book, pages) {
 
 function getBooks(filter) {
     return $.ajax({
-        url: `https://fsiconnected.tech/api/fsi/magic-book/book?filter=${filter}`,
+        url: `https://thebooks.azurewebsites.net/api/app/magic-book/book?filter=${filter}`,
         method: 'GET',
         dataType: 'json',
         contentType: 'application/json'
@@ -37,7 +37,25 @@ function getBooks(filter) {
 
 function deleteBook(bookName) {
     return $.ajax({
-        url: `https://fsiconnected.tech/api/fsi/magic-book/book?bookName=${bookName}`,
+        url: `https://thebooks.azurewebsites.net/api/app/magic-book/book?bookName=${bookName}`,
+        method: 'DELETE',
+        dataType: 'json',
+        contentType: 'application/json'
+    })
+}
+
+function login(username,password) {
+    return $.ajax({
+        url: `https://thebooks.azurewebsites.net/api/app/magic-book/book?bookName=${bookName}`,
+        method: 'DELETE',
+        dataType: 'json',
+        contentType: 'application/json'
+    })
+}
+
+function register(username,email,password) {
+    return $.ajax({
+        url: `https://thebooks.azurewebsites.net/api/app/magic-book/book?bookName=${bookName}`,
         method: 'DELETE',
         dataType: 'json',
         contentType: 'application/json'

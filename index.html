@@ -10,6 +10,7 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/form.css">
     <link rel="stylesheet" href="./css/library.css">
     <link rel="stylesheet" href="./owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="./owlcarousel/assets/owl.theme.default.css">
@@ -427,6 +428,45 @@
                 <div class="footer-bg-two"></div>
                 <div class="footer-bg-three"></div>
             </div>
+        </div>
+    </div>
+
+    <div class="newbook-popup" status="open">
+        <div class="newbook-form">
+            <h2>Cuốn sách mới</h2>
+            <button class="open-form">
+                <i class="fa-solid fa-pen-nib"></i>
+            </button>
+            <button class="close-form">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="form-item">
+                <p>Tên sách</p>
+                <input type="text">
+            </div>
+            <div class="form-item">
+                <p>Giới thiệu/tóm tắt</p>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="form-item">
+                <p>Danh mục</p>
+                <select name="cars" id="cars">
+                    <option value="aboutMe">ABOUT ME 🤗</option>
+                    <option value="code">CODE 💻</option>
+                    <option value="english">LEARN ENGLISH 💰</option>
+                    <option value="musicFilm">🎵 MUSIC & FILM 🎞️</option>
+                    <option value="book">BOOK 📖</option>
+                    <option value="collectedValue">COLLECTED VALUES 🌈</option>
+                </select>
+            </div>
+            <div class="form-item">
+                <p>Ảnh bìa <font style="font-size: 10px;">(ảnh nên có hình vuông)</font></p>
+                <input type="file" name="" id="picField">
+                <div class="image-cover-input">
+                    <img alt="Your Image" class="square-image" id="previewImage">
+                </div>
+            </div>
+            <button id="newBookBtn">Lưu</button>
         </div>
     </div>
 
