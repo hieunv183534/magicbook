@@ -1,5 +1,11 @@
 (function () {
     $(document).ready(function () {
+
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            // Sử dụng hộp thoại cảnh báo để thông báo cho người dùng
+            alert("Xin lỗi, trang web này hiện chưa hỗ trợ trên thiết bị di động.");
+        }
+
         $("#loginBtn").on('click', () => {
             debugger
             $(".user").attr('status', 'in');
