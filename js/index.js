@@ -115,41 +115,36 @@ function loadBooks() {
 
 function renderBookHtml(book) {
     return $(`<figure style="margin-left: 200px;" class='book'>
-                    <!-- Front -->
-                    <ul class='hardcover_front'>
-                        <li>
-                            <div class="position-relative py-8 py-sm-7">
-                                <div class="bg-holder rounded-soft rounded-bottom-0"
-                                    style="background-image:url('https://daustore.store/images/${book.imageCover}');">
-                                </div>
-                            </div>
-                            <div class="align">
-                                <h1 class="card-title" style="font-size:16px">${book.bookName}</h1>
-                            </div>
-                        </li>
-                        <li></li>
-                    </ul>
-                    <!-- Pages -->
-                    <ul class='page'>
-                        <li></li>
-                        <li style="font-size:14px">
-                            <a href="./book.html">${book.title}</a>
-                        </li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                    <!-- Back -->
-                    <ul class='hardcover_back'>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                    <ul class='book_spine'>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                    <figcaption></figcaption>
-                </figure>`);
+                <ul class='hardcover_front'>
+                    <li style="padding: 5px; display: flex; align-items: center; flex-direction: column; justify-content: center;">
+                        <div class="image-cover-input" style="width: 120px; height: 120px;">
+                            <img alt="Your Image" class="square-image" src="https://daustore.store/images/${book.imageCover}">
+                        </div>
+                        <div class="align">
+                            <h1 class="card-title" style="font-size:15px; text-align: center;">${book.bookName}</h1>
+                        </div>
+                    </li>
+                    <li></li>
+                </ul>
+                <ul class='page'>
+                    <li></li>
+                    <li style="font-size:14px; padding: 6px;">
+                        <a href="./book.html?book=${book.bookName}">${book.title} ... <i class="fa-regular fa-hand-point-right"></i>đọc tiếp</a>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul class='hardcover_back'>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul class='book_spine'>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <figcaption></figcaption>
+            </figure>`);
 }
 
 function renderCarousel() {

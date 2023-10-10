@@ -6,7 +6,7 @@ $.ajaxSetup({
     }
 });
 
-function getBook(bookName = "hieunv") {
+function getBook(bookName) {
     return $.ajax({
         url: `https://daustore.store/api/app/magic-book/magic-book?name=${bookName}`,
         method: 'GET',

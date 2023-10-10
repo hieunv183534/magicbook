@@ -1,6 +1,12 @@
 (function () {
     window.onload = () => {
 
+        var thisBook = null;
+        var pages = [];
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookName = urlParams.get('book');
+
         var currentPaperIndex = 0;
         openingOrClosing = false;
         var upping = [];
@@ -15,7 +21,10 @@
         renderBook();
 
         function renderBook() {
-            getBook().done(res => {
+            getBook(bookName).done(res => {
+                thisBook = res;
+                $("#imageCover").attr('src', 'https://daustore.store/images/' + res.imageCover);
+                $("#bookName").html(res.bookName);
                 $$1("#book .paper").forEach(paper => {
                     paper.remove();
                 });
@@ -202,10 +211,10 @@
         $1('#save').addEventListener('click', function () {
             let contentHtml = document.querySelector("#target").innerHTML;
             pages[choosePageIndex] = contentHtml;
-            addOrUpdateBook().done(res => {
+            writeBook(thisBook.bookName, pages).done(res => {
                 renderBook();
                 $1(".editor-space").classList.remove("editor-space-open");
-            });
+            })
         });
 
         $1('#cancel').addEventListener('click', function () {

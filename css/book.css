@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 @import url('https://fonts.googleapis.com/css?family=Mali');
+@import url('https://fonts.googleapis.com/css?family=Tourney');
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+@import url('https://fonts.googleapis.com/css?family=Grape+Nuts');
 
 * {
     box-sizing: border-box;
@@ -111,8 +115,8 @@ body {
 }
 
 iframe {
-   display: block ;
-   margin: auto;
+    display: block;
+    margin: auto;
 }
 
 .page-value p {
@@ -153,13 +157,14 @@ iframe {
     position: absolute;
     left: 0;
     top: -14px;
-    background-color: #ff0000;
+    background-color: #EDEDED;
     transform-origin: left;
     transition: transform 0.5s linear;
     transform-style: preserve-3d;
     perspective: 4000px;
     z-index: -100;
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2), 0 0 1px rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #999999;
 }
 
 .cover .front {
@@ -178,8 +183,7 @@ iframe {
     margin: auto;
     backface-visibility: hidden;
     transform: translateZ(-1px) rotateY(180deg);
-    background-color: #becfd6;
-    border-right: 1px solid #5f67ff;
+    background-color: #FFFBEC;
 }
 
 .back-cover {
@@ -188,8 +192,8 @@ iframe {
     position: absolute;
     left: 0;
     top: -14px;
-    background-color: #becfd6;
-    border-left: 1px solid #5f67ff;
+    background-color: #FFFBEC;
+    border-left: 4px solid #999999;
     z-index: -1000;
 }
 
@@ -340,4 +344,37 @@ iframe {
     to {
         opacity: 1;
     }
+}
+
+
+.image-cover-input {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    align-self: center;
+}
+
+.square-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* Điều này giúp hình ảnh nằm giữa div và tuân theo yêu cầu của bạn */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#bookName {
+    font-family: 'Bungee Shade', cursive;
+    line-height: 45px;
+    font-size: 29px;
 }

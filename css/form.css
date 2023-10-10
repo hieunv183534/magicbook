@@ -130,7 +130,7 @@ input[type="file"] {
     align-items: center;
     overflow: hidden;
     position: relative;
-    border: 1px solid #352834;
+    border: 1px solid #999999;
     align-self: center;
 }
 
