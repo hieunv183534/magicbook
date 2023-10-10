@@ -43,7 +43,7 @@
 .open-form {
     width: 40px;
     height: 40px;
-    background-color: aqua;
+    background-color: #e2a6a6;
     position: absolute;
     left: -40px;
     top: 10px;
@@ -60,7 +60,7 @@
 .close-form {
     width: 40px;
     height: 40px;
-    background-color: aqua;
+    background-color: #e2a6a6;
     position: absolute;
     right: -40px;
     top: 10px;
@@ -131,6 +131,7 @@ input[type="file"] {
     overflow: hidden;
     position: relative;
     border: 1px solid #352834;
+    align-self: center;
 }
 
 .square-image {
