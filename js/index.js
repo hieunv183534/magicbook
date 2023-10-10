@@ -96,6 +96,7 @@ function loadBooks() {
         let codeBooks = res.filter(x => x.tag == "code");
         let learnEnglishBooks = res.filter(x => x.tag == "learnEnglish");
         let musicAndFilmBooks = res.filter(x => x.tag == "musicAndFilm");
+        let shareBooks = res.filter(x => x.tag == "share");
         let bookBooks = res.filter(x => x.tag == "book");
         let collectedValueBooks = res.filter(x => x.tag == "collectedValue");
 
@@ -103,6 +104,7 @@ function loadBooks() {
         let codeBooksHtml = $("#listCodeBook");
         let learnEnglishBooksHtml = $("#listLearnEnglishBook");
         let musicAndFilmBooksHtml = $("#listMusicAndFilmBook");
+        let shareBooksHtml = $("#listShareBook");
         let bookBooksHtml = $("#listBookBook");
         let collectedValueBooksHtml = $("#listCollectedValueBook");
 
@@ -124,6 +126,11 @@ function loadBooks() {
         musicAndFilmBooks.forEach(book => {
             let bookHtml = renderBookHtml(book);
             musicAndFilmBooksHtml.append(bookHtml);
+        });
+
+        shareBooks.forEach(book => {
+            let bookHtml = renderBookHtml(book);
+            shareBooksHtml.append(bookHtml);
         });
 
         bookBooks.forEach(book => {
