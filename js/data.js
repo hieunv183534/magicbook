@@ -6,22 +6,23 @@ $.ajaxSetup({
     }
 });
 
-function getBook(bookName) {
+function getBook(bookId) {
     return $.ajax({
-        url: `https://daustore.store/api/app/magic-book/magic-book?name=${bookName}`,
+        url: `https://daustore.store/api/app/magic-book/magic-book/${bookId}`,
         method: 'GET',
         dataType: 'json',
         contentType: 'application/json'
     })
 }
 
-function addOrUpdateBookInfo(bookName, title, tag, author, imageCoverFile) {
+function addOrUpdateBookInfo(bookName, title, tag, author, imageCoverFile, bookId = null) {
     let formData = new FormData();
     formData.append('file', imageCoverFile);
     formData.append("BookName", bookName ?? "");
     formData.append("Title", title ?? "");
     formData.append("Tag", tag ?? "");
     formData.append("Author", author ?? "");
+    formData.append("Id", bookId ?? "00000000-0000-0000-0000-000000000000");
     return $.ajax({
         url: `https://daustore.store/api/app/magic-book/or-update-book-info`,
         method: 'POST',
@@ -31,9 +32,9 @@ function addOrUpdateBookInfo(bookName, title, tag, author, imageCoverFile) {
     })
 }
 
-function writeBook(bookName, pages) {
+function writeBook(bookId, pages) {
     let book = {
-        bookName: bookName,
+        id: bookId,
         pages: pages.map((x, i) => {
             return {
                 content: x,
@@ -63,10 +64,11 @@ function getBooks(filter = "") {
     })
 }
 
-function deleteBook(bookName) {
+function deleteBook(bookId) {
     return $.ajax({
-        url: `https://daustore.store/api/app/magic-book/book?bookName=${bookName}`,
-        method: 'DELETE',
+        url: `https://daustore.store/api/app/magic-book/delete-book/${bookId}`,
+        method: 'POST',
+        data: JSON.stringify({}),
         dataType: 'json',
         contentType: 'application/json'
     })

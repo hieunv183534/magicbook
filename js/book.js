@@ -5,7 +5,7 @@
         var pages = [];
 
         const urlParams = new URLSearchParams(window.location.search);
-        const bookName = urlParams.get('book');
+        const bookId = urlParams.get('book');
 
         var currentPaperIndex = 0;
         openingOrClosing = false;
@@ -21,11 +21,11 @@
         renderBook();
 
         function renderBook() {
-            getBook(bookName).done(res => {
+            getBook(bookId).done(res => {
 
                 let userInfo = getUserInfoFromSession();
-                if (userInfo?.unique_name == res.author){
-                    $(".back-cover-wrapper").css('display','flex');
+                if (userInfo?.unique_name == res.author) {
+                    $(".back-cover-wrapper").css('display', 'flex');
                 }
 
                 thisBook = res;
@@ -203,6 +203,7 @@
             choosePageIndex = pageCount;
             document.querySelector("#target").innerHTML = "";
             quill.setText('');
+            $(".editor-space .page-index").html(choosePageIndex + 1);
             $1(".editor-space").classList.add("editor-space-open");
         });
 
@@ -211,13 +212,15 @@
             let content = pages[choosePageIndex];
             quill.root.innerHTML = `${content}`;
             document.querySelector("#target").innerHTML = quill.root.innerHTML;
+            $(".editor-space .page-index").html(choosePageIndex + 1);
             $1(".editor-space").classList.add("editor-space-open");
         });
 
         $1('#save').addEventListener('click', function () {
             let contentHtml = document.querySelector("#target").innerHTML;
             pages[choosePageIndex] = contentHtml;
-            writeBook(thisBook.bookName, pages).done(res => {
+            debugger
+            writeBook(thisBook.id, pages).done(res => {
                 renderBook();
                 $1(".editor-space").classList.remove("editor-space-open");
             })
@@ -227,6 +230,22 @@
             document.querySelector("#target").innerHTML = "";
             quill.setText('');
             $1(".editor-space").classList.remove("editor-space-open");
+        });
+
+        $("button.edit-book").click(() => {
+            gotox(pageCount + 1);
+        });
+
+        $("button.close-book").click(() => {
+            closeAll();
+        });
+
+        $("button.return-home").click(() => {
+            window.location.href = "./index.html";
+        });
+
+        $("#updateBookInfoBtn").click(() => {
+            window.location.href = "./index.html?editBook=" + thisBook.id;
         });
 
         // document.onkeydown = (e) => {

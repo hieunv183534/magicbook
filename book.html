@@ -8,6 +8,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Magic Book</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css">
@@ -39,11 +40,14 @@
 
   <div id="book">
     <div class="cover close-fully" style="z-index: 1000;">
-      <div class="front" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+      <div class="front"
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
         <div class="image-cover-input">
-          <img alt="Your Image" class="square-image" id="imageCover" src="https://daustore.store/images/5bac5dda-a911-4bb2-b10c-3fa2570a7263.jpg">
+          <img alt="Your Image" class="square-image" id="imageCover"
+            src="https://daustore.store/images/5bac5dda-a911-4bb2-b10c-3fa2570a7263.jpg">
         </div>
-        <h1 style="font-size:30px; text-align: center; margin: 10px 30px;" id="bookName">Chúng ta chiến đấu vì điều gì</h1>
+        <h1 style="font-size:30px; text-align: center; margin: 10px 30px;" id="bookName">Chúng ta chiến đấu vì điều gì
+        </h1>
       </div>
       <div class="back">
       </div>
@@ -56,11 +60,25 @@
           </button>
         </span>
         <p>Hoặc chỉnh sửa trang nào đó</p>
-        <p style="font-size: 11px;">(Muốn xóa trang thì xóa hết nội dung trang đó)</p>
         <span>
-          <input type="number" id="inputEditIndex" placeholder="Nhập trang">
+          <input type="number" id="inputEditIndex" placeholder="Nhập số trang" style="margin-bottom: 5px;">
+        </span>
+        <span>
           <button id="editPage">
             Chỉnh
+          </button>
+          <button id="">
+            Chèn
+          </button>
+          <button id="">
+            Xóa
+          </button>
+        </span>
+        <p style="font-size: 11px;">(Trang mới được chèn trước số trang được chọn)</p>
+
+        <span>
+          <button style="margin-top: 40px;" id="updateBookInfoBtn">
+            Cập nhật thông tin bìa sách
           </button>
         </span>
       </div>
@@ -90,6 +108,18 @@
       <div id="editor"></div>
     </div>
   </div>
+
+  <button class="edit-book">
+    <i class="fa-solid fa-pen-nib"></i>
+  </button>
+
+  <button class="close-book">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+
+  <button class="return-home">
+    <i class="fa-solid fa-house"></i>
+  </button>
 
   <script src="./js/common.js"></script>
   <script src="./js/data.js"></script>

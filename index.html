@@ -56,6 +56,12 @@
         </div>
         <div class="book-row">
             <div class="row-foot">
+                <p>SHARE 🌐</p>
+            </div>
+            <div class="owl-carousel" id="listShareBook"></div>
+        </div>
+        <div class="book-row">
+            <div class="row-foot">
                 <p>🎵 MUSIC & FILM 🎞️</p>
             </div>
             <div class="owl-carousel" id="listMusicAndFilmBook"></div>
@@ -95,10 +101,10 @@
                 <input type="text" id="bookNameInput">
             </div>
             <div class="form-item">
-                <p>Giới thiệu/tóm tắt</p>
+                <p>Giới thiệu/tóm tắt <font style="font-size: 10px;">(dưới 30 từ)</font></p>
                 <textarea name="" cols="30" rows="10" id="titleInput"></textarea>
             </div>
-            <div class="form-item">
+            <div class="form-item" id="tagItem">
                 <p>Danh mục</p>
                 <select name="tags" id="tagInput">
                     <option value="aboutMe">ABOUT ME 🤗</option>
@@ -107,6 +113,7 @@
                     <option value="musicAndFilm">🎵 MUSIC & FILM 🎞️</option>
                     <option value="book">BOOK 📖</option>
                     <option value="collectedValue">COLLECTED VALUES 🌈</option>
+                    <option value="share">SHARE 🌐</option>
                 </select>
             </div>
             <div class="form-item">

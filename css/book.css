@@ -378,3 +378,51 @@ iframe {
     line-height: 45px;
     font-size: 29px;
 }
+
+.edit-book{
+    position: fixed;
+    top: 100px;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close-book{
+    position: fixed;
+    top: 150px;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.return-home{
+    position: fixed;
+    top: 50px;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

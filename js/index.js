@@ -19,9 +19,22 @@
 
         $(".open-form").on('click', () => {
             $(".newbook-popup").attr('status', 'open');
+            if (info.unique_name == "hieunv183534") {
+                $(".form-item#tagItem").css('display', 'flex');
+            } else {
+                $(".form-item#tagItem").css('display', 'none');
+            }
+
+            $("#bookNameInput").val("");
+            $("#titleInput").val("");
+            $("#picField").val(null);
+            document.getElementById("previewImage").src = null;
         });
         $(".close-form").on('click', () => {
             $(".newbook-popup").attr('status', 'close');
+            var currentUrl = window.location.href;
+            var cleanUrl = currentUrl.split('?')[0];
+            window.history.replaceState({}, document.title, cleanUrl);
         });
 
         document.getElementById('picField').onchange = function (evt) {
@@ -53,8 +66,17 @@
             const bookName = $("#bookNameInput").val();
             const title = $("#titleInput").val();
             if (bookName && title) {
-                addOrUpdateBookInfo(bookName, title, tag, info.unique_name, imageCoverFile).done(res => {
-                    console.log(res);
+                debugger
+                const urlParams = new URLSearchParams(window.location.search);
+                const bookId = urlParams.get('editBook');
+                addOrUpdateBookInfo(bookName, title, tag, info.unique_name, imageCoverFile, bookId).done(res => {
+                    if (bookId) { // edit
+                        alert("Cập nhật bìa sách thành công!");
+                        window.location.href = "./book.html?book=" + bookId;
+                    } else { // add
+                        alert("Thêm sách thành công!");
+                        window.location.reload();
+                    }
                 }).fail(err => {
                     alert("Có lỗi, vui lòng thử lại sau!");
                 })
@@ -113,6 +135,7 @@ function loadBooks() {
             let bookHtml = renderBookHtml(book);
             collectedValueBooksHtml.append(bookHtml);
         });
+        maybeEditPage(res);
         renderCarousel();
     }).fail(err => {
         alert("Có lỗi khi lấy danh sách book, vui lòng thử lại sau");
@@ -135,7 +158,7 @@ function renderBookHtml(book) {
                 <ul class='page'>
                     <li></li>
                     <li style="font-size:14px; padding: 6px;">
-                        <a href="./book.html?book=${book.bookName}">${book.title} ... <i class="fa-regular fa-hand-point-right"></i>đọc tiếp</a>
+                        <a href="./book.html?book=${book.id}">${book.title} ... <i class="fa-regular fa-hand-point-right"></i>đọc tiếp</a>
                     </li>
                     <li></li>
                     <li></li>
@@ -180,4 +203,25 @@ function renderCarousel() {
             }
         }
     );
+}
+
+function maybeEditPage(books) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const bookId = urlParams.get('editBook');
+
+    if (bookId) {
+        let book = books.find(x => x.id == bookId);
+        $("#tagInput").val(book.tag).change();
+        $("#bookNameInput").val(book.bookName);
+        $("#titleInput").val(book.title);
+        document.getElementById("previewImage").src = `https://daustore.store/images/${book.imageCover}`;
+        $(".newbook-popup").attr('status', 'open');
+        if (getUserInfoFromSession().unique_name == "hieunv183534") {
+            $(".form-item#tagItem").css('display', 'flex');
+        } else {
+            $(".form-item#tagItem").css('display', 'none');
+        }
+
+
+    }
 }
