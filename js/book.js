@@ -22,6 +22,12 @@
 
         function renderBook() {
             getBook(bookName).done(res => {
+
+                let userInfo = getUserInfoFromSession();
+                if (userInfo?.unique_name == res.author){
+                    $(".back-cover-wrapper").css('display','flex');
+                }
+
                 thisBook = res;
                 $("#imageCover").attr('src', 'https://daustore.store/images/' + res.imageCover);
                 $("#bookName").html(res.bookName);
