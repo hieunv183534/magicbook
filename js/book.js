@@ -33,6 +33,8 @@
                     $(".back-cover-wrapper").css('display', 'flex');
                 }
 
+                $("title").html(res.bookName);
+
                 thisBook = res;
                 $("#imageCover").attr('src', 'https://daustore.store/images/' + res.imageCover);
                 $("#bookName").html(res.bookName);
@@ -64,7 +66,6 @@
                     bookHtml.appendChild(paperHtml);
                 }
 
-                scaleByDeviceWidth();
             });
         }
 
@@ -255,6 +256,17 @@
             window.location.href = "./index.html?editBook=" + thisBook.id;
         });
 
+        $("#deleteBookBtn").click(() => {
+            if (confirm("Bạn có chắc chắn muốn xóa cuốn sách này không?") == true) {
+                deleteBook(thisBook.id).done(res => {
+                    alert("Xóa sách thành công!");
+                    window.location.href = "./index.html";
+                }).fail(err => {
+                    alert("Xóa sách thất bại, vui lòn thử lại!");
+                });
+            }
+        });
+
         // document.onkeydown = (e) => {
         //     e = e || window.event;
 
@@ -296,14 +308,14 @@
     }
 }());
 
-$(window).on('resize', function() {
-    scaleByDeviceWidth();
-});
+// $(window).on('resize', function() {
+//     scaleByDeviceWidth();
+// });
 
-function scaleByDeviceWidth() {
-    if (screen.width < 950) {
-        let scale = screen.width / 950;
-        console.log(scale);
-        $("#book").css('transform', `scale(${scale})`);
-    }
-}
+// function scaleByDeviceWidth() {
+//     if (screen.width < 950) {
+//         let scale = screen.width / 950;
+//         console.log(scale);
+//         $("#book").css('transform', `scale(${scale})`);
+//     }
+// }
