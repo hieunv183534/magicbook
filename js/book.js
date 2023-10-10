@@ -1,6 +1,11 @@
 (function () {
     window.onload = () => {
 
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            // Sử dụng hộp thoại cảnh báo để thông báo cho người dùng
+            alert("Xin lỗi, trang web này hiện chưa hỗ trợ trên thiết bị di động. Vui lòng sử dụng PC hoặc Ipad!");
+        }
+
         var thisBook = null;
         var pages = [];
 
@@ -58,6 +63,8 @@
                                                 </div>`);
                     bookHtml.appendChild(paperHtml);
                 }
+
+                scaleByDeviceWidth();
             });
         }
 
@@ -288,3 +295,15 @@
         }
     }
 }());
+
+$(window).on('resize', function() {
+    scaleByDeviceWidth();
+});
+
+function scaleByDeviceWidth() {
+    if (screen.width < 950) {
+        let scale = screen.width / 950;
+        console.log(scale);
+        $("#book").css('transform', `scale(${scale})`);
+    }
+}
