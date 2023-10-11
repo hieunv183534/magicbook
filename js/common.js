@@ -13,6 +13,7 @@ function $$1(selector) {
 }
 
 function getUserInfoFromSession() {
+    debugger;
     var token = sessionStorage.getItem("TOKEN");
     if (token) {
         const parts = token.split('.');
