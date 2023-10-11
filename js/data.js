@@ -83,6 +83,15 @@ function login(username, password) {
     })
 }
 
+function loginWithFacebook(accessToken) {
+    return $.ajax({
+        url: `https://daustore.store/api/app/auth/login-with-facebook?accessToken=${accessToken}`,
+        method: 'POST',
+        data: JSON.stringify({}),
+        contentType: 'application/json'
+    })
+}
+
 function register(username, email, password) {
     return $.ajax({
         url: `https://daustore.store/api/app/auth/register`,

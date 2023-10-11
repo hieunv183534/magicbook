@@ -48,7 +48,10 @@
       </span>
       <span style="margin-top: 5px; display: flex">
         <p>Hoặc đăng nhập bằng</p>
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        <fb:login-button
+          scope="public_profile,email"
+          onlogin="checkLoginState();"
+        >
         </fb:login-button>
       </span>
     </div>
@@ -91,7 +94,22 @@
       }
 
       function statusChangeCallback(res) {
-        console.log(res);
+        if (res.status == "connected") {
+          loginWithFacebook(res.authResponse.accessToken)
+            .done((res) => {
+              sessionStorage.setItem("TOKEN", res);
+              window.location.href = "./index.html";
+            })
+            .fail((err) => {
+              alert(
+                "Đăng nhập thất bại, vui lòng thử lại hoặc dùng cách đăng nhập khác!"
+              );
+            });
+        } else {
+          alert(
+            "Đăng nhập thất bại, vui lòng thử lại hoặc dùng cách đăng nhập khác!"
+          );
+        }
       }
     </script>
     <script src="./js/common.js"></script>
