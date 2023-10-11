@@ -12,6 +12,7 @@
             $("#username").html('hieunv183534');
             window.location.href = "./login.html";
         });
+
         $("#logoutBtn").on('click', () => {
             sessionStorage.removeItem('TOKEN');
             window.location.reload();
