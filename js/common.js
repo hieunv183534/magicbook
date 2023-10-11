@@ -16,13 +16,11 @@ function getUserInfoFromSession() {
     debugger;
     var token = sessionStorage.getItem("TOKEN");
     if (token) {
-        const parts = token.split('.');
-        const encodedPayload = parts[1];
-
-        // Giải mã phần Payload
-        const decodedPayload = atob(encodedPayload);
-        const payloadData = JSON.parse(decodedPayload);
-        return payloadData;
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(atob(base64));
+        const data = JSON.parse(jsonPayload);
+        return data;
     } else {
         return null;
     }
