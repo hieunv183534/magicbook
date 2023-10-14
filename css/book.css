@@ -379,7 +379,7 @@ iframe {
     font-size: 29px;
 }
 
-.edit-book{
+.edit-book {
     position: fixed;
     top: 100px;
     right: 0px;
@@ -395,7 +395,7 @@ iframe {
     cursor: pointer;
 }
 
-.close-book{
+.close-book {
     position: fixed;
     top: 150px;
     right: 0px;
@@ -411,7 +411,7 @@ iframe {
     cursor: pointer;
 }
 
-.return-home{
+.return-home {
     position: fixed;
     top: 50px;
     right: 0px;
@@ -425,4 +425,17 @@ iframe {
     outline: none;
     border: none;
     cursor: pointer;
+}
+
+.mobile-alert {
+    width: calc(100% - 20px);
+    padding: 30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mobile-alert h2 {
+    color: #FFFBEC;
 }

@@ -4,6 +4,10 @@
         if (/Mobi|Android/i.test(navigator.userAgent)) {
             // Sử dụng hộp thoại cảnh báo để thông báo cho người dùng
             alert("Xin lỗi, trang web này hiện chưa hỗ trợ trên thiết bị di động. Vui lòng sử dụng PC hoặc Ipad!");
+
+            $("#book").css('display', 'none');
+
+            $(".mobile-alert").css('display', 'flex');
         }
 
         var thisBook = null;
