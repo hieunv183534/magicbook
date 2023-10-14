@@ -31,7 +31,8 @@
 
         function renderBook() {
             getBook(bookId).done(res => {
-
+                $("#metaTitle").attr('content', res.bookName);
+                $("#metaImage").attr('content', 'https://daustore.store/images/' + res.imageCover);
                 let userInfo = getUserInfoFromSession();
                 if (userInfo?.unique_name == res.author) {
                     $(".back-cover-wrapper").css('display', 'flex');
@@ -45,6 +46,8 @@
                 $$1("#book .paper").forEach(paper => {
                     paper.remove();
                 });
+
+
                 currentPaperIndex = 0;
 
                 pages = res.pages.sort((a, b) => a.index - b.index).map(x => x.content);
