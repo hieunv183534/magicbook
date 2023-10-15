@@ -256,18 +256,18 @@
         });
 
         $("button.return-home").click(() => {
-            window.location.href = "./index.html";
+            window.location.href = "./index";
         });
 
         $("#updateBookInfoBtn").click(() => {
-            window.location.href = "./index.html?editBook=" + thisBook.id;
+            window.location.href = "./index?editBook=" + thisBook.id;
         });
 
         $("#deleteBookBtn").click(() => {
             if (confirm("Bạn có chắc chắn muốn xóa cuốn sách này không?") == true) {
                 deleteBook(thisBook.id).done(res => {
                     alert("Xóa sách thành công!");
-                    window.location.href = "./index.html";
+                    window.location.href = "./index";
                 }).fail(err => {
                     alert("Xóa sách thất bại, vui lòn thử lại!");
                 });

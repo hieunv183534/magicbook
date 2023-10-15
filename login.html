@@ -44,7 +44,7 @@
       <button id="loginBtn">Đăng nhập</button>
 
       <span style="margin-top: 5px">
-        <p><a href="register.html">Đăng ký</a> nếu chưa có tài khoản</p>
+        <p><a href="register">Đăng ký</a> nếu chưa có tài khoản</p>
       </span>
       <span style="margin-top: 5px; display: flex">
         <p>Hoặc đăng nhập bằng</p>
@@ -99,7 +99,7 @@
           loginWithFacebook(res.authResponse.accessToken)
             .done((res) => {
               sessionStorage.setItem("TOKEN", res);
-              window.location.href = "./index.html";
+              window.location.href = "./index";
             })
             .fail((err) => {
               alert(

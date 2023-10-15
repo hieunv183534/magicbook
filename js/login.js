@@ -1,7 +1,7 @@
 (function () {
     $(document).ready(function () {
         $(".login-title .logo h1").on('click', () => {
-            window.location.href = "./index.html"
+            window.location.href = "./index"
         });
 
         $('#loginBtn').click(() => {
@@ -10,7 +10,7 @@
             if (username && password) {
                 login(username, password).done(res => {
                     sessionStorage.setItem('TOKEN', res);
-                    window.location.href = './index.html'
+                    window.location.href = './index'
                 }).fail(err => {
                     if (err.status == 401) {
                         alert("Tài khoản hoặc mật khẩu không đúng!");

@@ -10,7 +10,7 @@
             debugger
             $(".user").attr('status', 'in');
             $("#username").html('hieunv183534');
-            window.location.href = "./login.html";
+            window.location.href = "./login";
         });
 
         $("#logoutBtn").on('click', () => {
@@ -73,7 +73,7 @@
                 addOrUpdateBookInfo(bookName, title, tag, info.unique_name, imageCoverFile, bookId).done(res => {
                     if (bookId) { // edit
                         alert("Cập nhật bìa sách thành công!");
-                        window.location.href = "./book.html?book=" + bookId;
+                        window.location.href = "./book?book=" + bookId;
                     } else { // add
                         alert("Thêm sách thành công!");
                         window.location.reload();
@@ -166,7 +166,7 @@ function renderBookHtml(book) {
                 <ul class='page'>
                     <li></li>
                     <li style="font-size:14px; padding: 6px;">
-                        <a href="./book.html?book=${book.id}">${book.title} ... <i class="fa-regular fa-hand-point-right"></i>đọc tiếp</a>
+                        <a href="./book?book=${book.id}">${book.title} ... <i class="fa-regular fa-hand-point-right"></i>đọc tiếp</a>
                     </li>
                     <li></li>
                     <li></li>
