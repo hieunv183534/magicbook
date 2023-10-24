@@ -20,7 +20,8 @@ body {
     background-image: url("bg.jpg");
 }
 
-#book, .paper {
+#book,
+.paper {
     height: 580px;
 }
 
@@ -294,7 +295,8 @@ iframe {
     background-color: rgba(0, 0, 0, 0);
 }
 
-#open, #close {
+#open,
+#close {
     width: 50px;
     height: 120px;
     position: fixed;
@@ -316,7 +318,8 @@ iframe {
 }
 
 
-#open, #close i {
+#open,
+#close i {
     font-size: 20px;
 }
 
@@ -438,4 +441,43 @@ iframe {
 
 .mobile-alert h2 {
     color: #FFFBEC;
+}
+
+/* -------------------------------------------- mobile content */
+
+.mobile-content {
+    width: calc(100% - 20px);
+    height: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color: #FFEFEF;
+    margin: auto;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.mobile-content p {
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0px;
+}
+
+.mobile-content h1 {
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.mobile-content h2 {
+    font-size: 19.5px;
+    line-height: 27px;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.mobile-content img {
+    max-width: 90%;
+    height: auto;
+    margin: 0px auto;
 }

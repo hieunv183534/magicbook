@@ -13,7 +13,9 @@
             $(".close-book").css('display', 'none');
             $(".return-home").css('display', 'none');
 
-            $(".mobile-alert").css('display', 'flex');
+            // $(".mobile-alert").css('display', 'flex');
+
+            renderMobile();
         } else {
             var thisBook = null;
             var pages = [];
@@ -331,3 +333,12 @@
 //         $("#book").css('transform', `scale(${scale})`);
 //     }
 // }
+
+function renderMobile() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const bookId = urlParams.get('book');
+    getBook(bookId).done(res => {
+        let content = res.pages.map(x => x.content).join(" ");
+        $(".mobile-content").html(content);
+    })
+}
