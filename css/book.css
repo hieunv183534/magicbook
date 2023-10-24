@@ -377,7 +377,7 @@ iframe {
     margin: auto;
 }
 
-#bookName{
+#bookName {
     font-family: 'Bungee Shade', cursive;
     line-height: 45px;
     font-size: 29px;
@@ -504,4 +504,28 @@ iframe {
     font-family: 'Bungee Shade', cursive;
     line-height: 38px;
     font-size: 23px;
+}
+
+
+
+
+#imagePopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+#popupImage {
+    max-width: 96%;
+    max-height: 96%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
 }

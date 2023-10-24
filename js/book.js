@@ -350,7 +350,6 @@
             });
             imageSrcs = srcArray;
 
-
             //-------------------- sự kiện cho các image
             let imgQuery;
             if (/Mobi|Android/i.test(navigator.userAgent)) {
@@ -358,9 +357,15 @@
             } else {
                 imgQuery = ".paper img";
             }
+
             $(imgQuery).click(function () {
                 var imageSrc = $(this).attr('src');
-                console.log(imageSrc);
+                $('#popupImage').attr('src', imageSrc);
+                $('#imagePopup').fadeIn();
+            });
+
+            $('#imagePopup').click(function() {
+                $('#imagePopup').fadeOut();
             });
         }
     }
