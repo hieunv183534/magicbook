@@ -144,6 +144,7 @@ iframe {
     max-width: 90%;
     height: auto;
     margin: 0px auto;
+    cursor: pointer;
 }
 
 .page-index {
@@ -480,6 +481,7 @@ iframe {
     max-width: 90%;
     height: auto;
     margin: 0px auto;
+    cursor: pointer;
 }
 
 .mobile-cover {

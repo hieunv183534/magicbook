@@ -1,5 +1,8 @@
 (function () {
     window.onload = () => {
+        var thisBook = null;
+        var pages = [];
+        var imageSrcs = [];
 
         if (/Mobi|Android/i.test(navigator.userAgent)) {
             // Sử dụng hộp thoại cảnh báo để thông báo cho người dùng
@@ -18,8 +21,6 @@
 
             renderMobile();
         } else {
-            var thisBook = null;
-            var pages = [];
 
             const urlParams = new URLSearchParams(window.location.search);
             const bookId = urlParams.get('book');
@@ -81,6 +82,7 @@
                         bookHtml.appendChild(paperHtml);
                     }
 
+                    queryImage(res);
                 });
             }
 
@@ -320,32 +322,46 @@
                 });
             }
         }
+
+        function renderMobile() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookId = urlParams.get('book');
+            getBook(bookId).done(res => {
+                let content = res.pages.map(x => x.content).join(" ");
+                $(".mobile-content").html(content);
+
+                $("#metaTitle").attr('content', res.bookName);
+                $("#metaImage").attr('content', 'https://daustore.store/images/' + res.imageCover);
+                $("title").html(res.bookName);
+                $("#imageCoverMobile").attr('src', 'https://daustore.store/images/' + res.imageCover);
+                $("#bookNameMobile").html(res.bookName);
+                queryImage(res);
+            })
+        }
+
+        function queryImage(book) {
+            let content = book.pages.map(x => x.content).join(" ");
+            let imageContainer = $("<div></div>");
+            imageContainer.html(content);
+            var srcArray = [];
+            imageContainer.find('img').each(function () {
+                var src = $(this).attr('src');
+                srcArray.push(src);
+            });
+            imageSrcs = srcArray;
+
+
+            //-------------------- sự kiện cho các image
+            let imgQuery;
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                imgQuery = ".mobile-content img";
+            } else {
+                imgQuery = ".paper img";
+            }
+            $(imgQuery).click(function () {
+                var imageSrc = $(this).attr('src');
+                console.log(imageSrc);
+            });
+        }
     }
 }());
-
-// $(window).on('resize', function() {
-//     scaleByDeviceWidth();
-// });
-
-// function scaleByDeviceWidth() {
-//     if (screen.width < 950) {
-//         let scale = screen.width / 950;
-//         console.log(scale);
-//         $("#book").css('transform', `scale(${scale})`);
-//     }
-// }
-
-function renderMobile() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const bookId = urlParams.get('book');
-    getBook(bookId).done(res => {
-        let content = res.pages.map(x => x.content).join(" ");
-        $(".mobile-content").html(content);
-
-        $("#metaTitle").attr('content', res.bookName);
-        $("#metaImage").attr('content', 'https://daustore.store/images/' + res.imageCover);
-        $("title").html(res.bookName);
-        $("#imageCoverMobile").attr('src', 'https://daustore.store/images/' + res.imageCover);
-        $("#bookNameMobile").html(res.bookName);
-    })
-}
