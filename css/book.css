@@ -376,7 +376,7 @@ iframe {
     margin: auto;
 }
 
-#bookName {
+#bookName{
     font-family: 'Bungee Shade', cursive;
     line-height: 45px;
     font-size: 29px;
@@ -480,4 +480,25 @@ iframe {
     max-width: 90%;
     height: auto;
     margin: 0px auto;
+}
+
+.mobile-cover {
+    width: calc(100% - 20px);
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    background-color: #EDEDED;
+}
+
+.mobile-cover .image-cover-input {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+}
+
+#bookNameMobile {
+    font-family: 'Bungee Shade', cursive;
+    line-height: 38px;
+    font-size: 23px;
 }

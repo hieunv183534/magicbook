@@ -3,7 +3,7 @@
 
         if (/Mobi|Android/i.test(navigator.userAgent)) {
             // Sử dụng hộp thoại cảnh báo để thông báo cho người dùng
-            alert("Xin lỗi, trang web này hiện chưa hỗ trợ trên thiết bị di động. Vui lòng sử dụng PC hoặc Ipad!");
+            alert("Để có trải nghiệm tốt hơn, vui lòng sử dụng PC. Xin cảm ơn!!");
         }
 
         $("#loginBtn").on('click', () => {

@@ -3,7 +3,7 @@
 
         if (/Mobi|Android/i.test(navigator.userAgent)) {
             // Sử dụng hộp thoại cảnh báo để thông báo cho người dùng
-            alert("Xin lỗi, trang web này hiện chưa hỗ trợ trên thiết bị di động. Vui lòng sử dụng PC hoặc Ipad!");
+            alert("Để có trải nghiệm tốt hơn, vui lòng sử dụng PC. Xin cảm ơn!");
 
             $("#book").css('display', 'none');
             $("#open").css('display', 'none');
@@ -13,7 +13,8 @@
             $(".close-book").css('display', 'none');
             $(".return-home").css('display', 'none');
 
-            // $(".mobile-alert").css('display', 'flex');
+            $(".mobile-cover").css('display', 'block');
+            $(".mobile-content").css('display', 'block');
 
             renderMobile();
         } else {
