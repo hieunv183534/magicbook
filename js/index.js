@@ -7,7 +7,6 @@
         }
 
         $("#loginBtn").on('click', () => {
-            debugger
             $(".user").attr('status', 'in');
             $("#username").html('hieunv183534');
             window.location.href = "./login";
@@ -67,7 +66,6 @@
             const bookName = $("#bookNameInput").val();
             const title = $("#titleInput").val();
             if (bookName && title) {
-                debugger
                 const urlParams = new URLSearchParams(window.location.search);
                 const bookId = urlParams.get('editBook');
                 addOrUpdateBookInfo(bookName, title, tag, info.unique_name, imageCoverFile, bookId).done(res => {

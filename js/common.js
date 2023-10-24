@@ -13,7 +13,6 @@ function $$1(selector) {
 }
 
 function getUserInfoFromSession() {
-    debugger;
     var token = sessionStorage.getItem("TOKEN");
     if (token) {
         const base64Url = token.split('.')[1];

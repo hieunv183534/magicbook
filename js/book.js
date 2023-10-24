@@ -6,6 +6,12 @@
             alert("Xin lỗi, trang web này hiện chưa hỗ trợ trên thiết bị di động. Vui lòng sử dụng PC hoặc Ipad!");
 
             $("#book").css('display', 'none');
+            $("#open").css('display', 'none');
+            $("#close").css('display', 'none');
+            $(".editor-space").css('display', 'none');
+            $(".edit-book").css('display', 'none');
+            $(".close-book").css('display', 'none');
+            $(".return-home").css('display', 'none');
 
             $(".mobile-alert").css('display', 'flex');
         }
@@ -234,7 +240,6 @@
         $1('#save').addEventListener('click', function () {
             let contentHtml = document.querySelector("#target").innerHTML;
             pages[choosePageIndex] = contentHtml;
-            debugger
             writeBook(thisBook.id, pages).done(res => {
                 renderBook();
                 $1(".editor-space").classList.remove("editor-space-open");
