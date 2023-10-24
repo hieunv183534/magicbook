@@ -489,6 +489,7 @@ iframe {
     border-radius: 4px;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
     background-color: #EDEDED;
+    padding: 20px;
 }
 
 .mobile-cover .image-cover-input {

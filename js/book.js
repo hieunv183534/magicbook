@@ -341,5 +341,11 @@ function renderMobile() {
     getBook(bookId).done(res => {
         let content = res.pages.map(x => x.content).join(" ");
         $(".mobile-content").html(content);
+
+        $("#metaTitle").attr('content', res.bookName);
+        $("#metaImage").attr('content', 'https://daustore.store/images/' + res.imageCover);
+        $("title").html(res.bookName);
+        $("#imageCoverMobile").attr('src', 'https://daustore.store/images/' + res.imageCover);
+        $("#bookNameMobile").html(res.bookName);
     })
 }
