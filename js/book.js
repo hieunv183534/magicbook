@@ -241,6 +241,14 @@
                 $1(".editor-space").classList.add("editor-space-open");
             });
 
+            $1('#insertPage').addEventListener('click', function () {
+                alert("Chèn trang!");
+            });
+
+            $1('#removePage').addEventListener('click', function () {
+                alert("Xóa trang!");
+            });
+
             $1('#save').addEventListener('click', function () {
                 let contentHtml = document.querySelector("#target").innerHTML;
                 pages[choosePageIndex] = contentHtml;
