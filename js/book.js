@@ -243,10 +243,20 @@
 
             $1('#insertPage').addEventListener('click', function () {
                 alert("Chèn trang!");
+                choosePageIndex = Number($1("#inputEditIndex").value - 1);
+                pages.splice(choosePageIndex, 0, "HieuNV- Trang mới được chèn đây!");
+                writeBook(thisBook.id, pages).done(res => {
+                    renderBook();
+                })
             });
 
             $1('#removePage').addEventListener('click', function () {
                 alert("Xóa trang!");
+                choosePageIndex = Number($1("#inputEditIndex").value - 1);
+                pages.splice(choosePageIndex, 1);
+                writeBook(thisBook.id, pages).done(res => {
+                    renderBook();
+                })
             });
 
             $1('#save').addEventListener('click', function () {
@@ -372,7 +382,7 @@
                 $('#imagePopup').fadeIn();
             });
 
-            $('#imagePopup').click(function() {
+            $('#imagePopup').click(function () {
                 $('#imagePopup').fadeOut();
             });
         }
