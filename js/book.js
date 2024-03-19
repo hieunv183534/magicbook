@@ -36,7 +36,11 @@
             var paperCount = null;
             var pageCount = null;
             var choosePageIndex = null;
-            renderBook();
+            if(bookId == "3a0e7400-69a7-6ff2-35e8-e861dae08ee9"){
+                alert("Thân hơn rùi cho xem hehe!");
+            }else{
+                renderBook();
+            }
 
             function renderBook() {
                 getBook(bookId).done(res => {
