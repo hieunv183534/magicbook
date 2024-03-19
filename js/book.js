@@ -348,7 +348,10 @@
         function renderMobile() {
             const urlParams = new URLSearchParams(window.location.search);
             const bookId = urlParams.get('book');
-            getBook(bookId).done(res => {
+            if(bookId == "3a0e7400-69a7-6ff2-35e8-e861dae08ee9"){
+                alert("Thân hơn rùi cho xem hehe!");
+            }else{
+                getBook(bookId).done(res => {
                 let content = res.pages.map(x => x.content).join(" ");
                 $(".mobile-content").html(content);
 
@@ -358,7 +361,8 @@
                 $("#imageCoverMobile").attr('src', 'https://daustore.store/images/' + res.imageCover);
                 $("#bookNameMobile").html(res.bookName);
                 queryImage(res);
-            })
+                })
+            }
         }
 
         function queryImage(book) {
