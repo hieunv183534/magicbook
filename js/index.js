@@ -160,7 +160,7 @@ function renderBookHtml(book) {
                 <ul class='hardcover_front'>
                     <li style="padding: 5px; display: flex; align-items: center; flex-direction: column; justify-content: center;">
                         <div class="image-cover-input" style="width: 120px; height: 120px;">
-                            <img alt="Your Image" class="square-image" src="https://daustore.store/images/${book.imageCover}">
+                            <img alt="Your Image" class="square-image" src="https://fsiconnected.com/images/${book.imageCover}">
                         </div>
                         <div class="align">
                             <h1 class="card-title" style="font-size:15px; text-align: center;">${book.bookName}</h1>
@@ -227,7 +227,7 @@ function maybeEditPage(books) {
         $("#tagInput").val(book.tag).change();
         $("#bookNameInput").val(book.bookName);
         $("#titleInput").val(book.title);
-        document.getElementById("previewImage").src = `https://daustore.store/images/${book.imageCover}`;
+        document.getElementById("previewImage").src = `https://fsiconnected.com/images/${book.imageCover}`;
         $(".newbook-popup").attr('status', 'open');
         if (getUserInfoFromSession().unique_name == "hieunv183534") {
             $(".form-item#tagItem").css('display', 'flex');

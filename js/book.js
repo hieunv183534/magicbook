@@ -45,7 +45,7 @@
             function renderBook() {
                 getBook(bookId).done(res => {
                     $("#metaTitle").attr('content', res.bookName);
-                    $("#metaImage").attr('content', 'https://daustore.store/images/' + res.imageCover);
+                    $("#metaImage").attr('content', 'https://fsiconnected.com/images/' + res.imageCover);
                     let userInfo = getUserInfoFromSession();
                     if (userInfo?.unique_name == res.author) {
                         $(".back-cover-wrapper").css('display', 'flex');
@@ -54,7 +54,7 @@
                     $("title").html(res.bookName);
 
                     thisBook = res;
-                    $("#imageCover").attr('src', 'https://daustore.store/images/' + res.imageCover);
+                    $("#imageCover").attr('src', 'https://fsiconnected.com/images/' + res.imageCover);
                     $("#bookName").html(res.bookName);
                     $$1("#book .paper").forEach(paper => {
                         paper.remove();
@@ -356,9 +356,9 @@
                 $(".mobile-content").html(content);
 
                 $("#metaTitle").attr('content', res.bookName);
-                $("#metaImage").attr('content', 'https://daustore.store/images/' + res.imageCover);
+                $("#metaImage").attr('content', 'https://fsiconnected.com/images/' + res.imageCover);
                 $("title").html(res.bookName);
-                $("#imageCoverMobile").attr('src', 'https://daustore.store/images/' + res.imageCover);
+                $("#imageCoverMobile").attr('src', 'https://fsiconnected.com/images/' + res.imageCover);
                 $("#bookNameMobile").html(res.bookName);
                 queryImage(res);
                 })

@@ -8,7 +8,7 @@ $.ajaxSetup({
 
 function getBook(bookId) {
     return $.ajax({
-        url: `https://daustore.store/api/app/magic-book/magic-book/${bookId}`,
+        url: `https://fsiconnected.com/api/app/magic-book/magic-book/${bookId}`,
         method: 'GET',
         dataType: 'json',
         contentType: 'application/json'
@@ -24,7 +24,7 @@ function addOrUpdateBookInfo(bookName, title, tag, author, imageCoverFile, bookI
     formData.append("Author", author ?? "");
     formData.append("Id", bookId ?? "00000000-0000-0000-0000-000000000000");
     return $.ajax({
-        url: `https://daustore.store/api/app/magic-book/or-update-book-info`,
+        url: `https://fsiconnected.com/api/app/magic-book/or-update-book-info`,
         method: 'POST',
         data: formData,
         processData: false,
@@ -47,7 +47,7 @@ function writeBook(bookId, pages) {
         imageCover: 'temp'
     }
     return $.ajax({
-        url: `https://daustore.store/api/app/magic-book/write-book`,
+        url: `https://fsiconnected.com/api/app/magic-book/write-book`,
         method: 'POST',
         data: JSON.stringify(book),
         dataType: 'json',
@@ -57,7 +57,7 @@ function writeBook(bookId, pages) {
 
 function getBooks(filter = "") {
     return $.ajax({
-        url: `https://daustore.store/api/app/magic-book/book?filter=${filter}`,
+        url: `https://fsiconnected.com/api/app/magic-book/book?filter=${filter}`,
         method: 'GET',
         dataType: 'json',
         contentType: 'application/json'
@@ -66,7 +66,7 @@ function getBooks(filter = "") {
 
 function deleteBook(bookId) {
     return $.ajax({
-        url: `https://daustore.store/api/app/magic-book/delete-book/${bookId}`,
+        url: `https://fsiconnected.com/api/app/magic-book/delete-book/${bookId}`,
         method: 'POST',
         data: JSON.stringify({}),
         dataType: 'json',
@@ -76,7 +76,7 @@ function deleteBook(bookId) {
 
 function login(username, password) {
     return $.ajax({
-        url: `https://daustore.store/api/app/auth/login`,
+        url: `https://fsiconnected.com/api/app/auth/login`,
         method: 'POST',
         data: JSON.stringify({ username, password }),
         contentType: 'application/json'
@@ -85,7 +85,7 @@ function login(username, password) {
 
 function loginWithFacebook(accessToken) {
     return $.ajax({
-        url: `https://daustore.store/api/app/auth/login-with-facebook?accessToken=${accessToken}`,
+        url: `https://fsiconnected.com/api/app/auth/login-with-facebook?accessToken=${accessToken}`,
         method: 'POST',
         data: JSON.stringify({}),
         contentType: 'application/json'
@@ -94,7 +94,7 @@ function loginWithFacebook(accessToken) {
 
 function register(username, email, password) {
     return $.ajax({
-        url: `https://daustore.store/api/app/auth/register`,
+        url: `https://fsiconnected.com/api/app/auth/register`,
         method: 'POST',
         data: JSON.stringify({ username, email, password, avatar: 'string' }),
         dataType: 'json',
